@@ -44,9 +44,9 @@ void ManejadorArchivos::leerArchivo(const std::string& nombreArchivo, Grafo<std:
 
     std::string linea;
 
-    // Leer la primera línea que contiene el número de líneas a evaluar
+    
     std::getline(archivo, linea);
-    int numeroDeLineas = std::stoi(linea); // Convertir la línea a un entero
+    int numeroDeLineas = std::stoi(linea); 
     
     std::string nombreArchivoSalida = "Salida" + nombreArchivo ;
     std::ofstream archivoSalida(nombreArchivoSalida); // Crea el archivo y escribe el numero de lineas
@@ -56,25 +56,24 @@ void ManejadorArchivos::leerArchivo(const std::string& nombreArchivo, Grafo<std:
     }
     archivoSalida<<numeroDeLineas<<std::endl;
 
-    int contador = 0; // Contador de líneas procesadas
+    int contador = 0; //Para numero de lineas
 
-    // Procesar las siguientes líneas hasta el número especificado
     while (contador < numeroDeLineas && std::getline(archivo, linea)) {
         std::string nombre1, nombre2; 
         std::istringstream stream(linea);
         stream >> nombre1 >> nombre2; 
 
-        // Verificar que ambos nombres se leyeron correctamente
+        // Verificar que ambos nombres se leyeron 
         if (!nombre1.empty() && !nombre2.empty()) {
             bool cumple = grafo.seisGradosDeSeparacion(nombre1, nombre2);
-            // Llama al método para escribir el resultado
+            // Para cada linea del archivo se llama al metodo que escribe su resultado
             escribirResultado(nombre1, nombre2, cumple, nombreArchivoSalida);
         }
 
-        contador++; // Incrementar el contador
+        contador++; 
     }
 
-    archivo.close();  // Cerrar el archivo
+    archivo.close();  
 }
 
 
