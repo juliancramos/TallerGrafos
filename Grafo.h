@@ -28,6 +28,8 @@ public:
 
     // (Breadth-First Search) //Anchura 
     void bfs(const T& nodoInicial) const;
+
+    bool seisGradosDeSeparacion(const T& inicio, const T& objetivo) const;
 };
 
 #include "Grafo.hxx"
