@@ -8,7 +8,7 @@
 class ManejadorArchivos {
 public:
     // Método para leer el archivo y mostrar su contenido
-    void leerArchivo(const std::string& nombreArchivo) const;
+    void ManejadorArchivos::leerArchivo(const std::string& nombreArchivo, Grafo<std::string>& grafo) const;
 };
 
 #endif // MANEJADORARCHIVOS_H
